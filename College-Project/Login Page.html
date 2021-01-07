@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fake News Detection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles - Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+	<header>
+		<nav id="header-nav" class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+			<div class="navbar-band">
+				<a href="index.html"><h1>Fake News Detection</h1></a>
+		    </div>		
+            <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+                <span class="sr-only">toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+		    </div>
+
+		    <div id="collapsable-nav" class="collapse navbar-collapse">
+            <ul id="nav-list" class="nav navbar-nav navbar-right">
+            <li id="navMenuButton">
+              <a href="index.html">
+                <span class="glyphicon glyphicon-home"></span><br class="hidden-xs"> Home</a>
+            </li>
+            <li>
+              <a href="about.html">
+                <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> About</a>
+            </li>
+            </ul><!--#nav-list -->
+            </div><!-- .collapse .navbar-collapse -->
+		</div><!-- .container -->
+		</nav><!-- #header-nav -->
+    </header>
+
+    <div id="main-content" class="container">
+      <div class="jumbotron">
+        <div class="FAKE text-center">NEWS DETECTION </div>
+           <p><div class="text-center">
+            <img src="121.png" loop muted autoplay></img><p>Fake News Detecting From Social Media</p>
+           </div></p>
+           <div class="input text-center">
+             <input type="text" placeholder="Tap To Enter New"><input type="submit" name="submit" value="Search">
+           </div>
+      </div>
+    </div><!--End of #main -content-->
+
+<!--- jQuery (Bootstrap JS plugins depend on it) -->
+    <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+    <script src="js/jQuery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script> 
+    $('.message a').click(function(){
+    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fake News Detection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles - Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+	<header>
+		<nav id="header-nav" class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+			<div class="navbar-band">
+				<a href="index.html"><h1>Fake News Detection</h1></a>
+		    </div>		
+            <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+                <span class="sr-only">toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+		    </div>
+
+		    <div id="collapsable-nav" class="collapse navbar-collapse">
+            <ul id="nav-list" class="nav navbar-nav navbar-right">
+            <li id="navMenuButton">
+              <a href="index.html">
+                <span class="glyphicon glyphicon-home"></span><br class="hidden-xs"> Home</a>
+            </li>
+            <li>
+              <a href="Login Page.html">
+                <span class="glyphicon glyphicon-globe"></span><br class="hidden-xs"> Social Media</a>
+            </li>
+            </ul><!--#nav-list -->
+            </div><!-- .collapse .navbar-collapse -->
+		</div><!-- .container -->
+		</nav><!-- #header-nav -->
+    </header>
+    
+    <div id="main-content" class="container">
+      <div class="jumbotron">
+        <div class="FAKE text-center">Fake News Detection in Python</div>
+        <p><div class="Fake">Fake News Detection:</div></p>
+        
+        <p>In this project, we have used various natural language processing techniques and machine learning algorithms to classify fake news articles using sci-kit libraries 
+          from python. 
+        </p>
+        <p><div class="Fake">Getting Started:</div></p>
+        <p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on
+           how to deploy the project on a live system.
+        </p>
+        <p><div class="Fake">Prerequisites:</div></p>
+        <p>What things you need to install the software and how to install them:</p>
+        
+        <p>1. Python 3.6 </p>
+          <p> - This setup requires that your machine has python 3.6 installed on it. you can refer to this url<a href="https://www.python.org/downloads/">
+            https://www.python.org/downloads/ </a>to download python. Once you have python downloaded and installed, you will need to setup PATH variables 
+            (if you want to run python program directly, detail instructions are below in *how to run software section*). To do that check this: 
+            <a href="https://www.pythoncentral.io/add-python-to-path-python-is-not-recognized-as-an-internal-or-external-command/"> https://www.pythoncentral.io/add-python-to-path-python-is-not-recognized-as-an-internal-or-external-command/</a>.  
+          </p>
+          <p>- Setting up PATH variable is optional as you can also run program without it and more instruction are given below on this topic. 
+          </p>
+        <p>2. Second and easier option is to download anaconda and use its anaconda prompt to run the commands. To install anaconda check this
+           url<a href="https://www.anaconda.com/download/"> https://www.anaconda.com/download/</a>
+        </p>
+        <p>3. You will also need to download and install below 3 packages after you install either python or anaconda from the steps above
+        </p> 
+          <p>- Sklearn (scikit-learn)</p>
+          <p>- numpy</p>
+          <p>- scipy</p>
+           
+          <p>- if you have chosen to install python 3.6 then run below commands in command prompt/terminal to install these packages
+           ```</p>
+           <p>pip install -U scikit-learn</p>
+           <p>pip install numpy</p>
+           <p>pip install scipy
+           ```</p>
+           <p>- if you have chosen to install anaconda then run below commands in anaconda prompt to install these packages
+           ```</p>
+           <p>conda install -c scikit-learn</p>
+           <p>conda install -c anaconda numpy</p>
+           <p>conda install -c anaconda scipy
+           ```</p>   
+        
+        <p><div class="Fake"> Dataset used:</div></p>
+        <p>The data source used for this project is LIAR dataset which contains 3 files with .tsv format for test, train and validation. Below is some description about the
+           data files used for this project.
+        </p>
+        <p>LIAR: A BENCHMARK DATASET FOR FAKE NEWS DETECTION</p>
+        
+        <p>William Yang Wang, "Liar, Liar Pants on Fire": A New Benchmark Dataset for Fake News Detection, to appear in Proceedings of the 55th Annual Meeting of the 
+          Association for Computational Linguistics (ACL 2017), short paper, Vancouver, BC, Canada, July 30-August 4, ACL.
+        </p>
+        <p>the original dataset contained 13 variables/columns for train, test and validation sets as follows:</p>
+        
+        <p>* Column 1: the ID of the statement ([ID].json).</p>
+        <p>* Column 2: the label. (Label class contains: True, Mostly-true, Half-true, Barely-true, FALSE, Pants-fire)</p>
+        <p>* Column 3: the statement.</p>
+        <p>* Column 4: the subject(s).</p>
+        <p>* Column 5: the speaker.</p>
+        <p>* Column 6: the speaker's job title.</p>
+        <p>* Column 7: the state info.</p>
+        <p>* Column 8: the party affiliation.</p>
+        <p>* Column 9-13: the total credit history count, including the current statement.</p>
+        <p>* 9: barely true counts.</p>
+        <p>* 10: false counts.</p>
+        <p>* 11: half true counts.</p>
+        <p>* 12: mostly true counts.</p>
+        <p>* 13: pants on fire counts.</p>
+        <p>* Column 14: the context (venue / location of the speech or statement).</p>
+        
+        <p>To make things simple we have chosen only 2 variables from this original dataset for this classification. The other variables can be added later to add some more 
+          complexity and enhance the features.
+        </p>
+        <p>Below are the columns used to create 3 datasets that have been in used in this project</p>
+        <p>* Column 1: Statement (News headline or text).</p>
+        <p>* Column 2: Label (Label class contains: True, False)</p>
+         
+        <p>You will see that newly created dataset has only 2 classes as compared to 6 from original classes. Below is method used for reducing the number of classes.
+        </p>
+        <p>* Original 	--	New</p>
+        <p>* True	   	--	True</p>
+        <p>* Mostly-true	-- 	True</p>
+        <p>* Half-true	-- 	True</p>
+        <p>* Barely-true	-- 	False</p>
+        <p>* False		-- 	False</p>
+        <p>* Pants-fire	-- 	False</p>
+        
+        <p>The dataset used for this project were in csv format named train.csv, test.csv and valid.csv and can be found in repo. The original datasets are in "liar" 
+          folder in tsv format.
+        </p>
+        
+        <p><div class="Fake"> File descriptions:</div></p>
+        
+        <p><div class="Fake"> DataPrep.py</div></p>
+        <p>This file contains all the pre processing functions needed to process all input documents and texts. First we read the train, test and validation data files 
+          then performed some pre processing like tokenizing, stemming etc. There are some exploratory data analysis is performed like response variable distribution and data
+           quality checks like null or missing values etc.
+        </p>
+        <p><div class="Fake"> FeatureSelection.py</div></p>
+        <p>In this file we have performed feature extraction and selection methods from sci-kit learn python libraries. For feature selection, we have used methods like
+           simple bag-of-words and n-grams and then term frequency like tf-tdf weighting. we have also used word2vec and POS tagging to extract the features, though POS
+            tagging and word2vec has not been used at this point in the project.
+        </p>
+        <p><div class="Fake"> classifier.py</div></p>
+        <p>Here we have build all the classifiers for predicting the fake news detection. The extracted features are fed into different classifiers. We have used 
+          Naive-bayes, Logistic Regression, Linear SVM, Stochastic gradient descent and Random forest classifiers from sklearn. Each of the extracted features were used 
+          in all of the classifiers. Once fitting the model, we compared the f1 score and checked the confusion matrix. After fitting all the classifiers, 2 best performing 
+          models were selected as candidate models for fake news classification. We have performed parameter tuning by implementing GridSearchCV methods on these candidate
+           models and chosen best performing parameters for these classifier. Finally selected model was used for fake news detection with the probability of truth. 
+           In Addition to this, We have also extracted the top 50 features from our term-frequency tfidf vectorizer to see what words are most and important in each of the
+            classes. We have also used Precision-Recall and learning curves to see how training and test set performs when we increase the amount of data in our classifiers.
+        </p>
+        <p><div class="Fake"> prediction.py</div></p>
+        <p>Our finally selected and best performing classifier was ```Logistic Regression``` which was then saved on disk with name ```final_model.sav```. Once you close 
+          this repository, this model will be copied to user's machine and will be used by prediction.py file to classify the fake news. It takes an news article as input
+           from user then model is used for final classification output that is shown to user along with probability of truth.
+        </p>
+        <p>Below is the Process Flow of the project:</p>
+        
+        <p align="center">
+          <img width="600" height="750" src="backend part/images/ProcessFlow.jpg">
+        </p>
+        
+        <p><div class="Fake"> Performance:</div></p>
+        <p>Below is the learning curves for our candidate models. </p>
+        
+        <p>**Logistic Regression Classifier**</p>
+        <p align="center">
+          <img width="550" height="450" src="backend part/images/LR_LCurve.jpg">
+        </p>
+        
+        <p>**Random Forest Classifier**</p>
+        
+        <p align="center">
+          <img width="550" height="450" src="backend part/images/RF_LCurve.jpg">
+        </p>
+        
+        <p><div class="Fake"> Next steps:</div></p>
+        <p>As we can see that our best performing models had an f1 score in the range of 70's. This is due to less number of data that we have used for training purposes and 
+          simplicity of our models. For the future implementations, we could introduce some more feature selection methods such as POS tagging, word2vec and topic modeling. 
+          In addition, we could also increase the training data size. We will extend this project to implement these techniques in future to increase the accuracy and 
+          performance of our models.
+        </p>
+        
+        <p><div class="Fake"> Installing and steps to run the software:</div></p>
+        
+        <p>A step by step series of examples that tell you have to get a development env running</p>
+        
+        <p>1. The first step would be to clone this repo in a folder in your local machine. To do that you need to run following command in command prompt or in git bash
+        ```</p>
+        <p>$ git clone <a href="https://github.com/Preetamkumarchauasiya/Mini-Project.git"> https://github.com/Preetamkumarchauasiya/Mini-Project.git</a>
+        ```</p>
+        
+        <p>2. This will copy all the data source file, program files and model into your machine.</p>
+        
+        <p>3.
+           - If you have chosen to install anaconda then follow below instructions</p>
+            <p>- After all the files are saved in a folder in your machine. If you chosen to install anaconda from the steps given in 	               ```Prerequisites``` 
+              sections then open the anaconda prompt, change the directory to the folder where this project is saved in     your machine and type below command and press 
+              enter.
+          ```</p>
+          <p>cd C:/your cloned project folder path goes here/
+          ```</p>
+            <p>- Once you are inside the directory call the ```prediction.py``` file, To do this, run below command in anaconda prompt.
+          ```</p>
+          <p>python prediction.py
+          ```</p>
+            <p>- After hitting the enter, program will ask for an input which will be a piece of information or a news headline that you 	    	   want to verify. Once you 
+              paste or type news headline, then press enter.
+            </p>
+            <p>- Once you hit the enter, program will take user input (news headline) and will be used by model to classify in one of  categories of "True" and "False". 
+              Along with classifying the news headline, model will also provide a probability of truth associated with it.
+            </p>
+        <p>4.  If you have chosen to install python (and did not set up PATH variable for it) then follow below instructions:</p>
+            <p>- After you clone the project in a folder in your machine. Open command prompt and change the directory to project directory by running below command.
+            ```</p>
+            <p>cd C:/your cloned project folder path goes here/
+            ```</p>
+            <p>- Locate ```python.exe``` in your machine. you can search this in window explorer search bar. </p>
+            <p>- Once you locate the ```python.exe``` path, you need to write whole path of it and then entire path of project folder with ```prediction.py``` at the end. For example if your ```python.exe``` is located at ```c:/Python36/python.exe``` and project folder is at ```c:/users/user_name/desktop/fake_news_detection/```, then your command to run program will be as below:
+            ```</p>
+            <p>c:/Python36/python.exe C:/users/user_name/desktop/fake_news_detection/prediction.py
+            ```</p>
+            <p>- After hitting the enter, program will ask for an input which will be a piece of information or a news headline that you 	    	   want to verify. Once you paste or type news headline, then press enter.
+            </p>
+            <p>- Once you hit the enter, program will take user input (news headline) and will be used by model to classify in one of  categories of "True" and "False". Along with classifying the news headline, model will also provide a probability of truth associated with it. It might take few seconds for model to classify the given statement so wait for it.
+            </p>
+        <p>5.  If you have chosen to install python (and already setup PATH variable for ```python.exe```) then follow instructions:</p>
+            <p>- Open the command prompt and change the directory to project folder as mentioned in above by running below command
+            ```</p>
+            <p>cd C:/your cloned project folder path goes here/
+            ```</p>
+            <p>- run below command
+            ```</p>
+            <p>python.exe C:/your cloned project folder path goes here/
+            ```</p>
+            <p>- After hitting the enter, program will ask for an input which will be a piece of information or a news headline that you 	    	   want to verify. Once you paste or type news headline, then press enter.
+            </p>
+            <p>- Once you hit the enter, program will take user input (news headline) and will be used by model to classify in one of  categories of "True" and "False". Along with classifying the news headline, model will also provide a probability of truth associated with it.
+            </p>
+        
+      </div>
+    </div><!--End of #main -content-->
+
+<!--- jQuery (Bootstrap JS plugins depend on it) -->
+    <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+    <script src="js/jQuery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script> 
+    $('.message a').click(function(){
+    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+    </script>
+</body>
+</html>
